@@ -6,7 +6,7 @@
 /*   By: esteiner <esteiner@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/14 11:43:09 by esteiner          #+#    #+#             */
-/*   Updated: 2022/12/14 16:51:57 by esteiner         ###   ########.fr       */
+/*   Updated: 2022/12/14 18:58:44 by esteiner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,13 +17,13 @@
 
 int is_print (char i)
 {
-	if (i > 31)
+	if (i >= ' ')
 		return (1);
-	else if (i < 32)
+	else if (i < ' ')
 		return (0);
 }
 
-/*
+
 int main()
 {
    int c;
@@ -36,4 +36,3 @@ int main()
    }
    return (0);
 }
-*/

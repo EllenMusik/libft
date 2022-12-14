@@ -1,35 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: esteiner <esteiner@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/13 19:26:41 by esteiner          #+#    #+#             */
-/*   Updated: 2022/12/14 18:56:57 by esteiner         ###   ########.fr       */
+/*   Created: 2022/12/14 17:21:23 by esteiner          #+#    #+#             */
+/*   Updated: 2022/12/14 18:25:16 by esteiner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <string.h>
+#include <stdio.h>
 
-
-int is_alpha (char c)
+void *ft_memset(void *str, int i, size_t n)
 {
-	if (c >= 'A' && c <= 'Z' || c >= 'a' && c <= 'z')
-		return(1);
-	else
-		return (0);
+	int x;
+
+	x = 0;
+	while (x < n)
+	{
+		str[x] = i;
+		x++;
+	}
 }
 
-/*
-int main(void)
+int main()
 {
-	char string_test1 = '';
-	int result;
-	result = is_alpha(string_test1);
-	printf("mein is alpha: %d\n", result);
-	result = isalpha(string_test1);
-	printf("isalpha: %d\n", result);
+	char* str1;
+	char* str2;
+	str1 = "hallo Welt";
+	str2 = "hallo Welt";
+
+	ft_memset(str1, 3, 6);
+	printf("Ergebnis: %s\n", str1);
+	memset(str2, 3, 6);
+	printf("Ergebnis: %s\n", str2);
 	return (0);
 }
-*/

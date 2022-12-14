@@ -6,13 +6,11 @@
 /*   By: esteiner <esteiner@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/04 18:59:17 by esteiner          #+#    #+#             */
-/*   Updated: 2022/12/13 19:09:09 by esteiner         ###   ########.fr       */
+/*   Updated: 2022/12/14 18:43:15 by esteiner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-#include <stdio.h>
-#include <stdlib.h>
+#include "libft.h"
 
 int	number_convert(int x, int nbr, char *str)
 {
@@ -55,7 +53,6 @@ int	ft_atoi(char *str)
 	return (nbr);
 }
 
-/*
 int main(void)
 {
 	char *value = "  \t\n -4582abc45";
@@ -81,4 +78,3 @@ int main(void)
 	printf("woud atoi do: %d\n", number);
 	return (0);
 }
-*/
