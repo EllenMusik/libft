@@ -1,38 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isdigit.c                                       :+:      :+:    :+:   */
+/*   ft_isprint.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: esteiner <esteiner@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/13 19:42:23 by esteiner          #+#    #+#             */
-/*   Updated: 2022/12/14 16:54:51 by esteiner         ###   ########.fr       */
+/*   Created: 2022/12/14 11:43:09 by esteiner          #+#    #+#             */
+/*   Updated: 2022/12/14 16:51:57 by esteiner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 
 #include <unistd.h>
 #include <stdio.h>
 #include <ctype.h>
 
 
-int is_digit (char i)
+int is_print (char i)
 {
-	if (i >= '0' && i <= '9')
-		return(1);
-	else
+	if (i > 31)
+		return (1);
+	else if (i < 32)
 		return (0);
 }
 
 /*
-int main(void)
+int main()
 {
-	char test1 = '7';
-	int result;
-	result = is_digit(test1);
-	printf("mein is digit: %d\n", result);
-	result = isdigit(test1);
-	printf("isdigit: %d\n", result);
-	return (0);
+   int c;
+   for(c = 1; c <= 127; ++c)
+   {
+   		if (isprint(c)!= 0)
+             printf("%c ", c);
+		if (is_print(c)!= 0)
+             printf("%c\n", c);
+   }
+   return (0);
 }
 */
