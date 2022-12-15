@@ -6,7 +6,7 @@
 /*   By: esteiner <esteiner@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/04 18:59:17 by esteiner          #+#    #+#             */
-/*   Updated: 2022/12/14 18:43:15 by esteiner         ###   ########.fr       */
+/*   Updated: 2022/12/15 19:27:45 by esteiner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ int	ft_atoi(char *str)
 
 int main(void)
 {
-	char *value = "  \t\n -4582abc45";
+	char *value = "694203";
 	char *value1 = "+4582abc45";
 	char *value2 = "-a1ascfd123";
 	char *value3 = "";
@@ -63,18 +63,18 @@ int main(void)
 	number = ft_atoi(value);
 	printf("this is the number: %d\n", number);
 	number = atoi(value);
-	printf("woud atoi do: %d\n", number);
+	printf("would atoi do: %d\n", number);
 	number = ft_atoi(value1);
 	printf("this is the number: %d\n", number);
 	number = atoi(value1);
-	printf("woud atoi do: %d\n", number);
+	printf("would atoi do: %d\n", number);
 	number = ft_atoi(value2);
 	printf("this is the number: %d\n", number);
 	number = atoi(value2);
-	printf("woud atoi do: %d\n", number);
+	printf("would atoi do: %d\n", number);
 	number = ft_atoi(value3);
 	printf("this is the number: %d\n", number);
 	number = atoi(value3);
-	printf("woud atoi do: %d\n", number);
+	printf("would atoi do: %d\n", number);
 	return (0);
 }

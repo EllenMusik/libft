@@ -6,35 +6,35 @@
 /*   By: esteiner <esteiner@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/14 17:21:23 by esteiner          #+#    #+#             */
-/*   Updated: 2022/12/14 18:25:16 by esteiner         ###   ########.fr       */
+/*   Updated: 2022/12/15 12:19:14 by esteiner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string.h>
 #include <stdio.h>
 
-void *ft_memset(void *str, int i, size_t n)
+void *ft_memset(void *str, int c, size_t n)
 {
-	int x;
+	size_t x;
 
 	x = 0;
 	while (x < n)
 	{
-		str[x] = i;
+		((unsigned char*)str)[x] = (unsigned char)c;
 		x++;
 	}
+	return(str);
 }
 
 int main()
 {
-	char* str1;
-	char* str2;
-	str1 = "hallo Welt";
-	str2 = "hallo Welt";
+	char	str1[50] = "hallo Welt";
+	char	str2[50] = "hallo Welt";
 
-	ft_memset(str1, 3, 6);
+
+	ft_memset(str1, 'g', 4);
 	printf("Ergebnis: %s\n", str1);
-	memset(str2, 3, 6);
+	memset(str2, 'g', 4);
 	printf("Ergebnis: %s\n", str2);
 	return (0);
 }
