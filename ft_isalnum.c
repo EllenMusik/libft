@@ -6,14 +6,11 @@
 /*   By: esteiner <esteiner@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/14 10:11:48 by esteiner          #+#    #+#             */
-/*   Updated: 2022/12/14 10:17:29 by esteiner         ###   ########.fr       */
+/*   Updated: 2022/12/16 14:25:05 by esteiner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-#include <stdio.h>
-#include <ctype.h>
-
+#include "libft.h"
 
 int is_alnum (char i)
 {

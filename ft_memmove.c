@@ -1,39 +1,51 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: esteiner <esteiner@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/14 17:21:23 by esteiner          #+#    #+#             */
-/*   Updated: 2022/12/16 14:25:56 by esteiner         ###   ########.fr       */
+/*   Created: 2022/12/16 12:13:15 by esteiner          #+#    #+#             */
+/*   Updated: 2022/12/16 14:48:34 by esteiner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void *ft_memset(void *str, int c, size_t n)
+void	*ft_memmove(void *dst, const void *src, size_t len)
 {
 	size_t x;
 
 	x = 0;
-	while (x < n)
+	if (dst < src)
 	{
-		((unsigned char*)str)[x] = (unsigned char)c;
-		x++;
+		dst = ft_memcpy(dst, src, len);
 	}
-	return(str);
+	else if (dst > src)
+	{
+		x = len - 1;
+		while(x > 0)
+		{
+		((unsigned char*)dst)[x] = ((unsigned char*)src)[x];
+		x--;
+		//<-----
+		}
+		((unsigned char*)dst)[0] = ((unsigned char*)src)[0];
+	}
+	return(dst);
 }
 
 int main()
 {
 	char	str1[50] = "hallo Welt";
 	char	str2[50] = "hallo Welt";
+	char	ssrc1[50] = "testtesttest";
+	char	ssrc2[50] = "testtesttest";
 
 
-	ft_memset(str1, 'g', 4);
+	ft_memmove(str1, ssrc1, 4);
 	printf("Ergebnis: %s\n", str1);
-	memset(str2, 'g', 4);
+	memmove(str2, ssrc2, 4);
 	printf("Ergebnis: %s\n", str2);
 	return (0);
 }

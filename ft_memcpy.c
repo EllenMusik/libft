@@ -6,13 +6,11 @@
 /*   By: esteiner <esteiner@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/16 11:22:36 by esteiner          #+#    #+#             */
-/*   Updated: 2022/12/16 12:01:48 by esteiner         ###   ########.fr       */
+/*   Updated: 2022/12/16 14:42:21 by esteiner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
-#include <string.h>
 
 void *ft_memcpy(void *restrict dst, const void *restrict src, size_t n)
 {
@@ -27,6 +25,7 @@ void *ft_memcpy(void *restrict dst, const void *restrict src, size_t n)
 	return(dst);
 }
 
+/*
 int main()
 {
 	char	str1[50] = "hallo Welt";
@@ -41,3 +40,4 @@ int main()
 	printf("Ergebnis: %s\n", str2);
 	return (0);
 }
+*/

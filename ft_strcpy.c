@@ -1,34 +1,48 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isascii.c                                       :+:      :+:    :+:   */
+/*   ft_strcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: esteiner <esteiner@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/14 10:18:54 by esteiner          #+#    #+#             */
-/*   Updated: 2022/12/16 14:25:16 by esteiner         ###   ########.fr       */
+/*   Created: 2022/09/22 17:30:02 by esteiner          #+#    #+#             */
+/*   Updated: 2022/09/22 19:36:06 by esteiner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <unistd.h>
 
-
-int is_ascii (char i)
+char	*ft_strcpy(char *dest, char *src)
 {
-	if (i >= 0 && i <= 127)
-		return(1);
-	else
-		return (0);
+	int	x;
+
+	x = 0;
+	while (src[x] != '\0')
+	{
+		dest[x] = src[x];
+		x++;
+	}
+	dest [x] = '\0';
+	return (dest);
 }
 
-
+/*
 int main(void)
 {
-	char string_test1 = '\n';
-	int result;
-	result = is_ascii(string_test1);
-	printf("mein is ascii: %d\n", result);
-	result = isascii(string_test1);
-	printf("isascii: %d\n", result);
-	return (0);
+	char *src = "Something to copy:)";
+	int	i;
+
+	i = 0;
+	while (src[i] != '\0')
+	{
+		i++;
+	}
+	char dest[i];
+	write(1,dest, i+1);
+	write(1,"\n",1);
+	ft_strcpy(dest,src);
+	write(1,dest, i+1);
+	write(1,"\n",1);
+	return(0);
 }
+*/

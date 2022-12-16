@@ -6,14 +6,11 @@
 /*   By: esteiner <esteiner@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/14 11:43:09 by esteiner          #+#    #+#             */
-/*   Updated: 2022/12/14 18:58:44 by esteiner         ###   ########.fr       */
+/*   Updated: 2022/12/16 14:25:29 by esteiner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-#include <stdio.h>
-#include <ctype.h>
-
+#include "libft.h"
 
 int is_print (char i)
 {

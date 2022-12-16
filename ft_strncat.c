@@ -1,39 +1,46 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_strncat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: esteiner <esteiner@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/14 17:21:23 by esteiner          #+#    #+#             */
-/*   Updated: 2022/12/16 14:25:56 by esteiner         ###   ########.fr       */
+/*   Created: 2022/09/29 12:55:47 by esteiner          #+#    #+#             */
+/*   Updated: 2022/10/04 12:24:04 by esteiner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <unistd.h>
+#include <stdio.h>
 
-void *ft_memset(void *str, int c, size_t n)
+char	*ft_strncat(char *dest, char *src, unsigned int nb)
 {
-	size_t x;
+	unsigned int	x;
+	unsigned int	y;
 
 	x = 0;
-	while (x < n)
-	{
-		((unsigned char*)str)[x] = (unsigned char)c;
+	y = 0;
+	while (dest[x] != '\0')
 		x++;
+	while (y < nb && src[y])
+	{
+		dest[x] = src[y];
+		x++;
+		y++;
 	}
-	return(str);
+	dest[x] = '\0';
+	return (dest);
 }
 
-int main()
+/*
+int		main(void)
 {
-	char	str1[50] = "hallo Welt";
-	char	str2[50] = "hallo Welt";
+	char				dest[50] = "bonjour";
+	char				*src;
+	unsigned int		size;
 
-
-	ft_memset(str1, 'g', 4);
-	printf("Ergebnis: %s\n", str1);
-	memset(str2, 'g', 4);
-	printf("Ergebnis: %s\n", str2);
-	return (0);
+	size = 5;
+	src = " amis";
+	printf("%s\n", ft_strncat(dest, src, size));
 }
+*/
