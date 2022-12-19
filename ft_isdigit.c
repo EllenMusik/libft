@@ -6,16 +6,16 @@
 /*   By: esteiner <esteiner@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/13 19:42:23 by esteiner          #+#    #+#             */
-/*   Updated: 2022/12/16 14:25:24 by esteiner         ###   ########.fr       */
+/*   Updated: 2022/12/19 16:04:19 by esteiner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int is_digit (char i)
+int	ft_isdigit(char i)
 {
 	if (i >= '0' && i <= '9')
-		return(1);
+		return (1);
 	else
 		return (0);
 }

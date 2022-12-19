@@ -6,21 +6,21 @@
 /*   By: esteiner <esteiner@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/14 11:43:09 by esteiner          #+#    #+#             */
-/*   Updated: 2022/12/16 14:25:29 by esteiner         ###   ########.fr       */
+/*   Updated: 2022/12/19 18:05:12 by esteiner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int is_print (char i)
+int	ft_isprint(char i)
 {
 	if (i >= ' ')
 		return (1);
-	else if (i < ' ')
+	else
 		return (0);
 }
 
-
+/*
 int main()
 {
    int c;
@@ -33,3 +33,4 @@ int main()
    }
    return (0);
 }
+*/

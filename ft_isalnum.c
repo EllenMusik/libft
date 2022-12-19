@@ -6,16 +6,16 @@
 /*   By: esteiner <esteiner@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/14 10:11:48 by esteiner          #+#    #+#             */
-/*   Updated: 2022/12/16 14:25:05 by esteiner         ###   ########.fr       */
+/*   Updated: 2022/12/19 18:05:23 by esteiner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int is_alnum (char i)
+int	ft_isalnum(char i)
 {
-	if (i >= '0' && i <= '9' || i >= 'a' && i <= 'z' || i >= 'A' && i <= 'Z')
-		return(1);
+	if (ft_isdigit(i) || (i >= 'a' && i <= 'z') || (i >= 'A' && i <= 'Z'))
+		return (1);
 	else
 		return (0);
 }

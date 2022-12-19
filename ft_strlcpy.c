@@ -6,14 +6,13 @@
 /*   By: esteiner <esteiner@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/27 10:56:01 by esteiner          #+#    #+#             */
-/*   Updated: 2022/09/27 17:23:29 by esteiner         ###   ########.fr       */
+/*   Updated: 2022/12/19 18:15:22 by esteiner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-#include <stdio.h>
+#include "libft.h"
 
-unsigned int	ft_strlcpy(char *dest, char *src, unsigned int size)
+ size_t	ft_strlcpy(char *restrict dst, const char *restrict src, size_t dstsize)
 {
 	unsigned int	x;
 	unsigned int	i;
@@ -24,14 +23,14 @@ unsigned int	ft_strlcpy(char *dest, char *src, unsigned int size)
 		return (0);
 	while (src[i])
 		i++;
-	while (src[x] && x < size -1)
+	while (src[x] && x < dstsize -1)
 	{
-		dest[x] = src[x];
+		dst[x] = src[x];
 		x++;
 	}
-	while (x < size)
+	while (x < dstsize)
 	{	
-		dest[x] = '\0';
+		dst[x] = '\0';
 		x++;
 	}
 	return (i);
@@ -53,11 +52,18 @@ int main(void)
 	size = 10;
 	if (size > i)
 		size = i + 1;
-	char dest[size];
-	x = ft_strlcpy(dest, string_test1, size);
+	char dst[size];
+	x = ft_strlcpy(dst, string_test1, size);
 	printf("length is %d\n", i);
 	printf("return value is %d\n", x);
-	write(1, dest, size);
+	write(1, dst, size);
+	write(1, "\n", 1);
+	printf("Size of copied string is %d\n", size);
+	write(1, "\n", 1);
+	x = strlcpy(dst, string_test1, size);
+	printf("length is %d\n", i);
+	printf("return value is %d\n", x);
+	write(1, dst, size);
 	write(1, "\n", 1);
 	printf("Size of copied string is %d\n", size);
 }
