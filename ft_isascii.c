@@ -6,16 +6,15 @@
 /*   By: esteiner <esteiner@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/14 10:18:54 by esteiner          #+#    #+#             */
-/*   Updated: 2022/12/19 18:05:44 by esteiner         ###   ########.fr       */
+/*   Updated: 2023/01/09 14:24:44 by esteiner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-
-int	ft_isascii(char i)
+int	ft_isascii(int c)
 {
-	if (i >= 0 && i <= 127)
+	if (c >= 0 && c <= 127)
 		return (1);
 	else
 		return (0);

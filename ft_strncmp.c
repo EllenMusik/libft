@@ -6,7 +6,7 @@
 /*   By: esteiner <esteiner@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/28 18:59:42 by esteiner          #+#    #+#             */
-/*   Updated: 2022/10/04 12:14:21 by esteiner         ###   ########.fr       */
+/*   Updated: 2023/01/09 17:43:05 by esteiner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int	ft_strncmp(char *s1, char *s2, unsigned int n)
 		}
 		else
 		{
-			return (s1[x] - s2[x]);
+			return ((unsigned char)s1[x] - (unsigned char) s2[x]);
 		}
 	}
 	return (0);

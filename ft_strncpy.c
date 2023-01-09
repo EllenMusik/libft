@@ -6,7 +6,7 @@
 /*   By: esteiner <esteiner@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/22 19:42:37 by esteiner          #+#    #+#             */
-/*   Updated: 2022/09/27 17:14:34 by esteiner         ###   ########.fr       */
+/*   Updated: 2023/01/09 14:17:20 by esteiner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ char	*ft_strncpy(char *dest, char *src, unsigned int n)
 	return (dest);
 }
 
-
+/*
 int main(void)
 {
 	char *src = "Some";
@@ -63,3 +63,4 @@ int main(void)
 	}
 	printf("Number of zeros to fill destination array: %d\n", count_nulls);	
 }
+*/

@@ -6,7 +6,7 @@
 /*   By: esteiner <esteiner@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/04 12:38:15 by esteiner          #+#    #+#             */
-/*   Updated: 2022/12/14 17:15:46 by esteiner         ###   ########.fr       */
+/*   Updated: 2023/01/09 14:30:52 by esteiner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,12 @@
 #include <stdio.h>
 #include <string.h>
 
-size_t	ft_strlen(const char *str)
+size_t	ft_strlen(const char *s)
 {
 	size_t	x;
 
 	x = 0;
-	while (str[x])
+	while (s[x])
 		x++;
 	return (x);
 }

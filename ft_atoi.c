@@ -6,7 +6,7 @@
 /*   By: esteiner <esteiner@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/04 18:59:17 by esteiner          #+#    #+#             */
-/*   Updated: 2022/12/15 19:27:45 by esteiner         ###   ########.fr       */
+/*   Updated: 2023/01/09 14:16:20 by esteiner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,7 @@ int	ft_atoi(char *str)
 	return (nbr);
 }
 
+/*
 int main(void)
 {
 	char *value = "694203";
@@ -78,3 +79,4 @@ int main(void)
 	printf("would atoi do: %d\n", number);
 	return (0);
 }
+*/

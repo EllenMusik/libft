@@ -6,13 +6,13 @@
 /*   By: esteiner <esteiner@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/19 18:17:18 by esteiner          #+#    #+#             */
-/*   Updated: 2022/12/19 20:03:38 by esteiner         ###   ########.fr       */
+/*   Updated: 2023/01/09 20:41:49 by esteiner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcat(char * restrict dst, const char * restrict src, size_t dstsize)
+size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
 	size_t	i;
 	size_t	j;
@@ -37,8 +37,7 @@ size_t	ft_strlcat(char * restrict dst, const char * restrict src, size_t dstsize
 			i++;
 		}
 	}
-	dst[i] = '\0';
-	x += dstsize - 1;
+	x += j;
 	return (x);
 }
 

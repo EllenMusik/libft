@@ -6,17 +6,16 @@
 /*   By: esteiner <esteiner@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/13 19:26:41 by esteiner          #+#    #+#             */
-/*   Updated: 2022/12/19 18:05:33 by esteiner         ###   ########.fr       */
+/*   Updated: 2023/01/09 14:24:24 by esteiner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-
-int	ft_isalpha(char c)
+int	ft_isalpha(int c)
 {
 	if ((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z'))
-		return(1);
+		return (1);
 	else
 		return (0);
 }
