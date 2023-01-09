@@ -6,7 +6,7 @@
 /*   By: esteiner <esteiner@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/19 18:17:18 by esteiner          #+#    #+#             */
-/*   Updated: 2023/01/09 20:41:49 by esteiner         ###   ########.fr       */
+/*   Updated: 2023/01/09 22:04:00 by esteiner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,12 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 
 	i = 0;
 	j = 0;
-	while (dst[i] != '\0')
+	while (dst[i])
 		i++;
-	x = i;
+	while (src[j])
+		j++;
+	x = j + i;
+	j = 0;
 	while (src[j] && i < dstsize)
 	{
 		dst[i] = src[j];
@@ -37,7 +40,6 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 			i++;
 		}
 	}
-	x += j;
 	return (x);
 }
 

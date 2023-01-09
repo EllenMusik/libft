@@ -6,7 +6,7 @@
 /*   By: esteiner <esteiner@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/16 11:22:36 by esteiner          #+#    #+#             */
-/*   Updated: 2023/01/09 16:41:10 by esteiner         ###   ########.fr       */
+/*   Updated: 2023/01/09 21:10:48 by esteiner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 	x = 0;
 	while (x < n)
 	{
-		((unsigned int *)dst)[x] = ((unsigned int *)src)[x];
+		((unsigned char *)dst)[x] = ((unsigned char *)src)[x];
 		x++;
 	}
 	return (dst);

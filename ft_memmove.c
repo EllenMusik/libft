@@ -6,7 +6,7 @@
 /*   By: esteiner <esteiner@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/16 12:13:15 by esteiner          #+#    #+#             */
-/*   Updated: 2023/01/09 16:43:14 by esteiner         ###   ########.fr       */
+/*   Updated: 2023/01/09 21:05:50 by esteiner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,10 +26,10 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 		x = len - 1;
 		while (x > 0)
 		{
-		((unsigned int *)dst)[x] = ((unsigned int *)src)[x];
+		((unsigned char *)dst)[x] = ((unsigned char *)src)[x];
 		x--;
 		}
-		((unsigned int *)dst)[0] = ((unsigned int *)src)[0];
+		((unsigned char *)dst)[0] = ((unsigned char *)src)[0];
 	}
 	return (dst);
 }
