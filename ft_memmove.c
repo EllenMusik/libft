@@ -6,7 +6,7 @@
 /*   By: esteiner <esteiner@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/16 12:13:15 by esteiner          #+#    #+#             */
-/*   Updated: 2023/01/09 21:05:50 by esteiner         ###   ########.fr       */
+/*   Updated: 2023/01/10 14:33:41 by esteiner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 	size_t	x;
 
 	x = 0;
+	if (len == 0)
+		return (dst);
 	if (dst < src)
 	{
 		dst = ft_memcpy(dst, src, len);
@@ -26,8 +28,8 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 		x = len - 1;
 		while (x > 0)
 		{
-		((unsigned char *)dst)[x] = ((unsigned char *)src)[x];
-		x--;
+			((unsigned char *)dst)[x] = ((unsigned char *)src)[x];
+			x--;
 		}
 		((unsigned char *)dst)[0] = ((unsigned char *)src)[0];
 	}

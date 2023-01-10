@@ -6,7 +6,7 @@
 /*   By: esteiner <esteiner@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/19 18:17:18 by esteiner          #+#    #+#             */
-/*   Updated: 2023/01/09 22:04:00 by esteiner         ###   ########.fr       */
+/*   Updated: 2023/01/10 13:49:19 by esteiner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,27 +20,17 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 
 	i = 0;
 	j = 0;
-	while (dst[i])
+	while (dst[i] && i < dstsize)
 		i++;
-	while (src[j])
-		j++;
-	x = j + i;
-	j = 0;
-	while (src[j] && i < dstsize)
+	x = ft_strlen(dst);
+	while (src[j] && i + j + 1 < dstsize)
 	{
-		dst[i] = src[j];
-		i++;
+		dst[i + j] = src[j];
 		j++;
 	}
-	if (src[j] == '\0' && i < dstsize)
-	{
-		while (i <= dstsize)
-		{
-			dst[i] = '\0';
-			i++;
-		}
-	}
-	return (x);
+	if (dstsize > x)
+		dst[i + j] = '\0';
+	return (ft_strlen(src) + i);
 }
 
 /*

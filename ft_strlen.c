@@ -6,13 +6,11 @@
 /*   By: esteiner <esteiner@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/04 12:38:15 by esteiner          #+#    #+#             */
-/*   Updated: 2023/01/09 14:30:52 by esteiner         ###   ########.fr       */
+/*   Updated: 2023/01/10 13:29:30 by esteiner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-#include <stdio.h>
-#include <string.h>
+#include "libft.h"
 
 size_t	ft_strlen(const char *s)
 {

@@ -6,7 +6,7 @@
 /*   By: esteiner <esteiner@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/14 18:38:52 by esteiner          #+#    #+#             */
-/*   Updated: 2023/01/09 20:40:56 by esteiner         ###   ########.fr       */
+/*   Updated: 2023/01/10 17:00:27 by esteiner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,5 +34,8 @@ int		ft_toupper(int c);
 int		ft_tolower(int c);
 size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize);
 int		ft_strncmp(char *s1, char *s2, unsigned int n);
+char	*ft_strchr(const char *s, int c);
+char	*ft_strrchr(const char *s, int c);
+void	*ft_memchr(const void *s, int c, size_t n);
 
 #endif
