@@ -6,7 +6,7 @@
 /*   By: esteiner <esteiner@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/27 10:56:01 by esteiner          #+#    #+#             */
-/*   Updated: 2023/01/09 18:32:46 by esteiner         ###   ########.fr       */
+/*   Updated: 2023/01/11 21:21:37 by esteiner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 		i++;
 	if (dstsize == 0)
 		return (i);
-	while (src[x] != '\0' && x + 1 < dstsize)
+	while (src[x] && x + 1 < dstsize)
 	{
 		dst[x] = src[x];
 		x++;
