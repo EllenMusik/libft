@@ -54,15 +54,17 @@ char	*ft_strtrim(char const *s1, char const *set)
 	int		k;
 
 	k = 0;
-	if (!s1)
-		return (0);
+	if (s1[k] == 0)
+	{
+		s2 = ft_substr(s1, 1, 1);
+		return (s2);
+	}
 	i = ft_checkfront(s1, set, 0);
 	if (i < ft_strlen(s1) - 1)
 		k = ft_checkback(s1, set, ft_strlen(s1) - 1);
-	s2 = malloc(sizeof(char) * (ft_strlen(s1) - i - k + 2));
+	s2 = ft_substr(s1, i, ft_strlen(s1) - i - k + 1);
 	if (!s2)
 		return (NULL);
-	s2 = ft_substr(s1, i, ft_strlen(s1) - i - k + 1);
 	return (s2);
 }
 

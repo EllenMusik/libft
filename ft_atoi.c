@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-int	number_convert(int x, int nbr, char *str)
+static int	number_convert(int x, int nbr, char *str)
 {
 	int	res;
 
