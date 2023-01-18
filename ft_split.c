@@ -3,39 +3,46 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ellensteiner <ellensteiner@student.42.f    +#+  +:+       +#+        */
+/*   By: esteiner <esteiner@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/13 14:09:34 by ellensteine       #+#    #+#             */
-/*   Updated: 2023/01/13 20:05:20 by ellensteine      ###   ########.fr       */
+/*   Updated: 2023/01/17 17:52:45 by esteiner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-static int freefunktion(char **split, int m)
+
+static char	**freefunktion(char **splitm, int m, int k, int l)
 {
-	while (m > 0)
+	if (m < 1)
+		splitm = malloc(sizeof(char *) * (k + 1));
+	if (!splitm)
+		return (0);
+	splitm[m] = malloc(sizeof(char) * (l + 1));
+	if (!splitm[m])
 	{
-		free(split[m]);
-		m--;
+		while (m > 0)
+		{
+			free(splitm[m]);
+			m--;
+		}
+		free(splitm);
+		return (0);
 	}
-	free(split);
-	return(0);
+	return (splitm);
 }
 
-static char **mallocfunktion(char const *s, char c, int k)
+static char	**mallocfunktion(char const *s, char c, int k)
 {
+	char	**splitm;
 	int		i;
-	int		l;
 	int		m;
-	char 	**splitm;
+	int		l;
 
 	i = 0;
-	l = 0;
 	m = 0;
-	splitm = malloc(sizeof(char*) * (k + 1));
-	if (!splitm)
-		return(0);
-	while(k > 0)
+	l = 0;
+	while (k > 0)
 	{
 		while (s[i] == c)
 			i++;
@@ -44,27 +51,24 @@ static char **mallocfunktion(char const *s, char c, int k)
 			i++;
 			l++;
 		}
-		splitm[m] = malloc(sizeof(char) * (l + 1));
-		if (!splitm[m])
-		{
-			freefunktion(splitm, m);
+		splitm = freefunktion(splitm, m, k, l);
+		if (!splitm)
 			return (0);
-		}
 		l = 0;
 		m++;
 		k--;
 	}
-	return(splitm);
+	return (splitm);
 }
 
-static int wordcounter(char const *s, char c)
+static int	wordcounter(char const *s, char c)
 {
-	int i;
-	int k;
+	int	i;
+	int	k;
 
 	i = 0;
 	k = 0;
-	while(s[i] == c)
+	while (s[i] == c)
 		i++;
 	while (s[i])
 	{
@@ -82,11 +86,11 @@ static int wordcounter(char const *s, char c)
 	return (k);
 }
 
-static int fillinfunktion(char **split, char const *s, char c, int k)
+static int	fillinfunktion(char **split, char const *s, char c, int k)
 {
-	int i;
-	int l;
-	int m;
+	int	i;
+	int	l;
+	int	m;
 
 	i = 0;
 	l = 0;
@@ -110,20 +114,27 @@ static int fillinfunktion(char **split, char const *s, char c, int k)
 	return (0);
 }
 
-char **ft_split(char const *s, char c)
+char	**ft_split(char const *s, char c)
 {
 	int		k;
 	char	**split;
-	
-	if (!s)
-		return(0);
+
+	if (s == 0)
+		return (0);
 	k = wordcounter(s, c);
 	if (s[0] == 0)
 		k = 0;
-	split = mallocfunktion(s, c, k);
+	if (k > 0)
+		split = mallocfunktion(s, c, k);
+	else
+	{
+		split = malloc(sizeof(char *) * 1);
+		split[0] = 0;
+	}
 	if (!split)
 		return (0);
-	fillinfunktion(split, s, c, k);
+	if (k > 0)
+		fillinfunktion(split, s, c, k);
 	return (split);
 }
 
