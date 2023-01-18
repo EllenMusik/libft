@@ -1,34 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isascii.c                                       :+:      :+:    :+:   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: esteiner <esteiner@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/14 10:18:54 by esteiner          #+#    #+#             */
-/*   Updated: 2023/01/18 18:32:20 by esteiner         ###   ########.fr       */
+/*   Created: 2023/01/18 13:41:13 by esteiner          #+#    #+#             */
+/*   Updated: 2023/01/18 17:58:03 by esteiner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isascii(int c)
+t_list	*ft_lstnew(void *content)
 {
-	if (c >= 0 && c <= 127)
-		return (1);
-	else
-		return (0);
-}
+	t_list	*node;
 
-/*
-int main(void)
-{
-	char string_test1 = '\n';
-	int result;
-	result = is_ascii(string_test1);
-	printf("mein is ascii: %d\n", result);
-	result = isascii(string_test1);
-	printf("isascii: %d\n", result);
-	return (0);
+	node = malloc(sizeof(t_list));
+	if (!node)
+		return (0);
+	node->content = content;
+	node->next = NULL;
+	return (node);
 }
-*/
