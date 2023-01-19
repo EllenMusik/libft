@@ -1,24 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
+/*   ft_lstclear.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: esteiner <esteiner@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/18 19:51:34 by esteiner          #+#    #+#             */
-/*   Updated: 2023/01/19 15:17:48 by esteiner         ###   ########.fr       */
+/*   Created: 2023/01/19 12:52:56 by esteiner          #+#    #+#             */
+/*   Updated: 2023/01/19 19:38:04 by esteiner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstadd_back(t_list **lst, t_list *new)
+void	ft_lstclear(t_list **lst, void (*del)(void*))
 {
 	t_list	*adresse;
+	t_list	*temporary;
 
-	adresse = ft_lstlast(*lst);
-	if (adresse != NULL)
-		adresse->next = new;
-	if (adresse == NULL)
-		*lst = new;
+	adresse = lst[0];
+	if (lst[0] != 0)
+	{
+		while (adresse->next != 0)
+		{
+			del(adresse->content);
+			temporary = adresse->next;
+			free(adresse);
+			adresse = temporary;
+		}
+		del(adresse->content);
+		free(adresse);
+		lst[0] = 0;
+	}
 }

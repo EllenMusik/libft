@@ -6,7 +6,7 @@
 #    By: esteiner <esteiner@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/19 14:11:49 by esteiner          #+#    #+#              #
-#    Updated: 2023/01/18 20:19:33 by esteiner         ###   ########.fr        #
+#    Updated: 2023/01/19 16:36:29 by esteiner         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,9 @@ ft_strncmp.c ft_strchr.c ft_strrchr.c ft_memchr.c ft_memcmp.c ft_strnstr.c ft_ca
 ft_substr.c ft_strjoin.c ft_strtrim.c ft_split.c ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c\
 ft_putnbr_fd.c ft_strmapi.c ft_itoa.c ft_striteri.c\
 
-BSRCFILES = ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c ft_lstadd_back.c
+BSRCFILES = ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c ft_lstadd_back.c ft_lstdelone.c\
+ft_lstclear.c ft_lstiter.c ft_lstmap.c\
+
 BOBJFILES = $(BSRCFILES:.c=.o)
 OBJFILES = $(SRCFILES:.c=.o)
 
