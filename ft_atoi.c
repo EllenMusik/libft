@@ -6,13 +6,13 @@
 /*   By: esteiner <esteiner@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/04 18:59:17 by esteiner          #+#    #+#             */
-/*   Updated: 2023/01/09 14:16:20 by esteiner         ###   ########.fr       */
+/*   Updated: 2023/01/19 21:15:55 by esteiner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	number_convert(int x, int nbr, char *str)
+static int	number_convert(int x, int nbr, const char *str)
 {
 	int	res;
 
@@ -33,7 +33,7 @@ static int	number_convert(int x, int nbr, char *str)
 	}
 }
 
-int	ft_atoi(char *str)
+int	ft_atoi(const char *str)
 {
 	int	x;
 	int	nbr;

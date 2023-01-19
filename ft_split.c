@@ -6,7 +6,7 @@
 /*   By: esteiner <esteiner@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/13 14:09:34 by ellensteine       #+#    #+#             */
-/*   Updated: 2023/01/17 17:52:45 by esteiner         ###   ########.fr       */
+/*   Updated: 2023/01/19 21:51:19 by esteiner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -119,17 +119,16 @@ char	**ft_split(char const *s, char c)
 	int		k;
 	char	**split;
 
-	if (s == 0)
-		return (0);
-	k = wordcounter(s, c);
-	if (s[0] == 0)
+	if (s[0] == '\0' || s == NULL || !s)
 		k = 0;
+	else
+		k = wordcounter(s, c);
 	if (k > 0)
 		split = mallocfunktion(s, c, k);
 	else
 	{
 		split = malloc(sizeof(char *) * 1);
-		split[0] = 0;
+		split[0] = NULL;
 	}
 	if (!split)
 		return (0);

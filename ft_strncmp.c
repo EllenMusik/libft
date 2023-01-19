@@ -6,15 +6,15 @@
 /*   By: esteiner <esteiner@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/28 18:59:42 by esteiner          #+#    #+#             */
-/*   Updated: 2023/01/09 17:43:05 by esteiner         ###   ########.fr       */
+/*   Updated: 2023/01/19 21:12:58 by esteiner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-int	ft_strncmp(char *s1, char *s2, unsigned int n)
+int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	unsigned int	x;
+	size_t	x;
 
 	x = 0;
 	while ((x < n && s1[x]) || (s2[x] && x < n))
